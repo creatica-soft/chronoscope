@@ -1,6 +1,7 @@
 # Chronoscope
 Arduino-based simple chronoscope
 
+It uses two pairs of red laser + photodiode receiver for less than a buck each connected to an Arduino board (MEGA in my case but can be any other). The laser+receiver pairs are 10cm apart. When an object (such as BB, for example) crosses a laser beam, an interrupt routine is invoked and reads the time in microseconds using micros() function. Knowing the delay between crossing the first and the second beam, and the distance between them, we calculate the speed: speed in m/s = (distance in meters * 1000000) / (delay in microsec).
 
 ![Chronoscope](Chronoscope.jpg)
 
